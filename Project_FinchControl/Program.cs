@@ -8,13 +8,13 @@ namespace Project_FinchControl
 
     // **************************************************
     //
-    // Title: Finch Control - Menu Starter
-    // Description: Starter solution with the helper methods,
-    //              opening and closing screens, and the menu
+    // Title: Finch Control
+    // Description: An app that allows you to play with the 
+    // finch robot with a menu.
     // Application Type: Console
-    // Author: Velis, John
-    // Dated Created: 1/22/2020
-    // Last Modified: 1/25/2020
+    // Author: Dell-Smith, Zach
+    // Dated Created: 2/17/2021
+    // Last Modified: 2/20/2021
     //
     // **************************************************
 
@@ -139,9 +139,9 @@ namespace Project_FinchControl
                 // get user menu choice
                 //
                 Console.WriteLine("\ta) Light and Sound");
-                Console.WriteLine("\tb) ");
-                Console.WriteLine("\tc) ");
-                Console.WriteLine("\td) ");
+                Console.WriteLine("\tb) Play A Song");
+                Console.WriteLine("\tc) Movement");
+                Console.WriteLine("\td) Choose your own color");
                 Console.WriteLine("\tq) Main Menu");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -156,15 +156,15 @@ namespace Project_FinchControl
                         break;
 
                     case "b":
-
+                        TalentShowPlayASong(finchRobot);
                         break;
 
                     case "c":
-
+                        TalentShowMovement(finchRobot);
                         break;
 
                     case "d":
-
+                        TalentShowUserChoice(finchRobot);
                         break;
 
                     case "q":
@@ -196,14 +196,544 @@ namespace Project_FinchControl
             Console.WriteLine("\tThe Finch robot will now show off its glowing talent!");
             DisplayContinuePrompt();
 
+
             for (int lightSoundLevel = 0; lightSoundLevel < 255; lightSoundLevel++)
             {
                 finchRobot.setLED(lightSoundLevel, lightSoundLevel, lightSoundLevel);
                 finchRobot.noteOn(lightSoundLevel * 100);
+
             }
+           
+            LightsandSound(finchRobot);
+
+            DisplayContinuePrompt();
 
             DisplayMenuPrompt("Talent Show Menu");
         }
+
+        static void TalentShowPlayASong(Finch finchRobot)
+        {
+            finchRobot.noteOn(660);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(660);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(660);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(510);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(100);
+
+            finchRobot.noteOn(660);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(770);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(550);
+
+            finchRobot.noteOn(380);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(575);
+            //===========================
+            finchRobot.noteOn(510);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(450);
+
+            finchRobot.noteOn(300);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(400);
+
+            finchRobot.noteOn(320);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(500);
+
+            finchRobot.noteOn(440);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(480);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(330);
+
+            finchRobot.noteOn(450);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(430);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(380);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(200);
+
+            finchRobot.noteOn(660);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(200);
+
+            finchRobot.noteOn(760);
+            finchRobot.wait(50);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(860);
+            finchRobot.wait(100);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(700);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(760);
+            finchRobot.wait(50);
+            finchRobot.noteOff();
+            finchRobot.wait(350);
+
+            finchRobot.noteOn(660);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(300);
+
+            finchRobot.noteOn(520);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(580);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(150);
+
+            finchRobot.noteOn(480);
+            finchRobot.wait(80);
+            finchRobot.noteOff();
+            finchRobot.wait(500);
+
+            DisplayContinuePrompt();
+        }
+
+        // Mybe one day ill get the whole song :/
+//:beep frequency = 510 length = 100ms;
+//:delay 450ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 400ms;
+//:beep frequency = 320 length = 100ms;
+//:delay 500ms;
+//:beep frequency = 440 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 480 length = 80ms;
+//:delay 330ms;
+//:beep frequency = 450 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 200ms;
+//:beep frequency = 660 length = 80ms;
+//:delay 200ms;
+//:beep frequency = 760 length = 50ms;
+//:delay 150ms;
+//:beep frequency = 860 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 700 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 760 length = 50ms;
+//:delay 350ms;
+//:beep frequency = 660 length = 80ms;
+//:delay 300ms;
+//:beep frequency = 520 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 580 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 480 length = 80ms;
+//:delay 500ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 150ms;
+//:delay 300ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 570 length = 100ms;
+//:delay 220ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 200ms;
+//:delay 300ms;
+
+//:beep frequency = 1020 length = 80ms;
+//:delay 300ms;
+//:beep frequency = 1020 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 1020 length = 80ms;
+//:delay 300ms;
+
+//:beep frequency = 380 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 150ms;
+//:delay 300ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 570 length = 100ms;
+//:delay 420ms;
+
+//:beep frequency = 585 length = 100ms;
+//:delay 450ms;
+
+//:beep frequency = 550 length = 100ms;
+//:delay 420ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 360ms;
+
+//:beep frequency = 380 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 150ms;
+//:delay 300ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 570 length = 100ms;
+//:delay 220ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 200ms;
+//:delay 300ms;
+
+//:beep frequency = 1020 length = 80ms;
+//:delay 300ms;
+//:beep frequency = 1020 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 1020 length = 80ms;
+//:delay 300ms;
+
+//:beep frequency = 380 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 760 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 720 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 680 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 620 length = 150ms;
+//:delay 300ms;
+
+//:beep frequency = 650 length = 150ms;
+//:delay 300ms;
+//:beep frequency = 380 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 430 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 100ms;
+//:beep frequency = 570 length = 100ms;
+//:delay 420ms;
+
+//:beep frequency = 585 length = 100ms;
+//:delay 450ms;
+
+//:beep frequency = 550 length = 100ms;
+//:delay 420ms;
+
+//:beep frequency = 500 length = 100ms;
+//:delay 360ms;
+
+//:beep frequency = 380 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 100ms;
+//:delay 300ms;
+
+//:beep frequency = 500 length = 60ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 80ms;
+//:delay 300ms;
+//:beep frequency = 500 length = 60ms;
+//:delay 350ms;
+//:beep frequency = 500 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 580 length = 80ms;
+//:delay 350ms;
+//:beep frequency = 660 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 500 length = 80ms;
+//:delay 300ms;
+//:beep frequency = 430 length = 80ms;
+//:delay 150ms;
+//:beep frequency = 380 length = 80ms;
+//:delay 600ms;
+
+//:beep frequency = 500 length = 60ms;
+//            :delay 150ms;
+//            :beep frequency = 500 length = 80ms;
+//            :delay 300ms;
+//            :beep frequency = 500 length = 60ms;
+//            :delay 350ms;
+//            :beep frequency = 500 length = 80ms;
+//            :delay 150ms;
+//            :beep frequency = 580 length = 80ms;
+//            :delay 150ms;
+//            :beep frequency = 660 length = 80ms;
+//            :delay 550ms;
+
+//            :beep frequency = 870 length = 80ms;
+//            :delay 325ms;
+//            :beep frequency = 760 length = 80ms;
+//            :delay 600ms;
+
+//            :beep frequency = 500 length = 60ms;
+//            :delay 150ms;
+//            :beep frequency = 500 length = 80ms;
+//            :delay 300ms;
+//            :beep frequency = 500 length = 60ms;
+//            :delay 350ms;
+//            :beep frequency = 500 length = 80ms;
+//            :delay 150ms;
+//            :beep frequency = 580 length = 80ms;
+//            :delay 350ms;
+//            :beep frequency = 660 length = 80ms;
+//            :delay 150ms;
+//            :beep frequency = 500 length = 80ms;
+//            :delay 300ms;
+//            :beep frequency = 430 length = 80ms;
+//            :delay 150ms;
+//            :beep frequency = 380 length = 80ms;
+//            :delay 600ms;
+            
+//            :beep frequency = 660 length = 100ms;
+//            :delay 150ms;
+//            :beep frequency = 660 length = 100ms;
+//            :delay 300ms;
+//            :beep frequency = 660 length = 100ms;
+//            :delay 300ms;
+//            :beep frequency = 510 length = 100ms;
+//            :delay 100ms;
+//            :beep frequency = 660 length = 100ms;
+//            :delay 300ms;
+//            :beep frequency = 770 length = 100ms;
+//            :delay 550ms;
+//            :beep frequency = 380 length = 100ms;
+//            :delay 575ms;
+        
+        static void TalentShowUserChoice(Finch finchRobot)
+        {
+    
+            Console.WriteLine();
+            Console.WriteLine("\tPlease enter a value for red (0-255).");
+            int red = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("\tPlease enter a value for green (0-255).");
+            int green = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("\tPlease enter a value for blue (0-255).");
+            int blue = int.Parse(Console.ReadLine());
+
+            finchRobot.setLED(red, green, blue);
+            finchRobot.wait(10000);
+            finchRobot.setLED(0, 0, 0);
+
+            DisplayContinuePrompt();
+
+        }
+      
+        static void LightsandSound(Finch finchRobot)
+        {
+            finchRobot.setLED(255, 0, 0);
+            finchRobot.noteOn(150);
+            finchRobot.wait(1000);
+            finchRobot.noteOff();
+
+            finchRobot.setLED(0, 255, 0);
+            finchRobot.noteOn(100);
+            finchRobot.wait(1000);
+            finchRobot.noteOff();
+
+            finchRobot.setLED(0, 0, 255);
+            finchRobot.noteOn(200);
+            finchRobot.wait(1000);
+            finchRobot.noteOff();
+        }
+
+        static void TalentShowMovement(Finch finchRobot)
+        {
+           
+            //int forwardTime = int.Parse(Console.ReadLine());
+            
+            //int left = int.Parse(Console.ReadLine());
+            //int leftTime = int.Parse(Console.ReadLine());
+           
+            //int right = int.Parse(Console.ReadLine());
+            //int rightTime = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("Tell me how fast I should go forward (0-255)");
+            int forward = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("And for how long? (in ms)");
+            int forwardTime = int.Parse(Console.ReadLine());
+
+            finchRobot.setMotors(forward, forward);
+            finchRobot.wait(forwardTime);
+            finchRobot.setMotors(0, 0);
+
+            DisplayContinuePrompt();
+
+            Console.WriteLine();
+            Console.WriteLine("Tell me how fast I should go left (0-255)");
+            int left = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("And for how long? (in ms)");
+            int leftTime = int.Parse(Console.ReadLine());
+
+            finchRobot.setMotors(left, 0);
+            finchRobot.wait(leftTime);
+            finchRobot.setMotors(0, 0);
+
+            DisplayContinuePrompt();
+
+            Console.WriteLine();
+            Console.WriteLine("Tell me how fast I should go right (0-255)");
+            int right = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("And for how long? (in ms)");
+            int rightTime = int.Parse(Console.ReadLine());
+
+            finchRobot.setMotors(0, right);
+            finchRobot.wait(rightTime);
+            finchRobot.setMotors(0, 0);
+
+            DisplayContinuePrompt();
+        }
+
 
         #endregion
 
@@ -336,3 +866,4 @@ namespace Project_FinchControl
         #endregion
     }
 }
+
