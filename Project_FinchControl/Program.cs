@@ -682,43 +682,36 @@ namespace Project_FinchControl
 
         static void TalentShowMovement(Finch finchRobot)
         {
-           
+
             //int forwardTime = int.Parse(Console.ReadLine());
-            
+
             //int left = int.Parse(Console.ReadLine());
             //int leftTime = int.Parse(Console.ReadLine());
-           
+
             //int right = int.Parse(Console.ReadLine());
             //int rightTime = int.Parse(Console.ReadLine());
 
-            Console.WriteLine();
-            Console.WriteLine("Tell me how fast I should go forward (0-255)");
-            int forward = int.Parse(Console.ReadLine());
+            Forward(finchRobot);
 
-            Console.WriteLine();
-            Console.WriteLine("And for how long? (in ms)");
-            int forwardTime = int.Parse(Console.ReadLine());
-
-            finchRobot.setMotors(forward, forward);
-            finchRobot.wait(forwardTime);
-            finchRobot.setMotors(0, 0);
+            LightsandSound(finchRobot);
 
             DisplayContinuePrompt();
 
-            Console.WriteLine();
-            Console.WriteLine("Tell me how fast I should go left (0-255)");
-            int left = int.Parse(Console.ReadLine());
+            TurnLeft(finchRobot);
 
-            Console.WriteLine();
-            Console.WriteLine("And for how long? (in ms)");
-            int leftTime = int.Parse(Console.ReadLine());
-
-            finchRobot.setMotors(left, 0);
-            finchRobot.wait(leftTime);
-            finchRobot.setMotors(0, 0);
+            LightsandSound(finchRobot);
 
             DisplayContinuePrompt();
 
+            TurnRight(finchRobot);
+
+            LightsandSound(finchRobot);
+
+            DisplayContinuePrompt();
+        }
+      
+        static void TurnRight(Finch finchRobot)
+        {
             Console.WriteLine();
             Console.WriteLine("Tell me how fast I should go right (0-255)");
             int right = int.Parse(Console.ReadLine());
@@ -730,13 +723,38 @@ namespace Project_FinchControl
             finchRobot.setMotors(0, right);
             finchRobot.wait(rightTime);
             finchRobot.setMotors(0, 0);
-
-            DisplayContinuePrompt();
         }
 
+        static void TurnLeft(Finch finchRobot)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Tell me how fast I should go left (0-255)");
+            int left = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
+            Console.WriteLine("And for how long? (in ms)");
+            int leftTime = int.Parse(Console.ReadLine());
+
+            finchRobot.setMotors(left, 0);
+            finchRobot.wait(leftTime);
+            finchRobot.setMotors(0, 0);
+        }
         #endregion
 
+        static void Forward (Finch finchRobot)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Tell me how fast I should go forward (0-255)");
+            int forward = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("And for how long? (in ms)");
+            int forwardTime = int.Parse(Console.ReadLine());
+
+            finchRobot.setMotors(forward, forward);
+            finchRobot.wait(forwardTime);
+            finchRobot.setMotors(0, 0);
+        }
         #region FINCH ROBOT MANAGEMENT
 
         /// <summary>
